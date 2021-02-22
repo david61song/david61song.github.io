@@ -5,4 +5,6 @@ gemspec
 
 
 gem 'jekyll-seo-tag'
+gem 'kramdown'
+gem 'rouge'
 

@@ -27,3 +27,5 @@ header_pages:
 style: dark # dark (default), light or hacker
 footer: 'Published by david song'
 
+markdown: kramdown
+highlighter: rouge
