@@ -2,4 +2,9 @@
 layout: default
 ---
 
+  {% for tag in page.tags %}
+    <span class="tag">[#{{ tag }}]</span>
+  {% endfor %}
+
+
 {{ content }}

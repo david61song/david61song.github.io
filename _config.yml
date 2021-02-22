@@ -11,5 +11,19 @@
 #style: light # dark (default) or light
 #listen_for_clients_preferred_style: true # true or false (default)
 
+
+title: David Song's blog
+subtitle: song_blog
+email: david61song@protonmail.com
+
 plugins:
   - jekyll-seo-tag
+header_pages:
+  - index.md
+  - PGP.md
+  - about.md
+  - category.html
+
+style: dark # dark (default), light or hacker
+footer: 'Published by david song'
+
