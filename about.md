@@ -4,4 +4,6 @@ layout: home
 permalink: /about
 ---
 
-this is about.
+CS student.
+
+Email:david61song@protonmail.com
