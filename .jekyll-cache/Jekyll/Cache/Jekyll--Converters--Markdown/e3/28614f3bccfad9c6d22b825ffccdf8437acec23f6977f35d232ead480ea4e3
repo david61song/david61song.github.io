@@ -1,0 +1,15 @@
+I"‰<h1 id="what-is-pintos-project">What is pintos project?</h1>
+
+<p>Pintos is an education-purpose Operating System.
+We will perform several tasks and learn the elements of the operating system.
+Pintosâ€™ assignments are divided into four stages.</p>
+
+<ul>
+  <li>Threads</li>
+  <li>User program</li>
+  <li>Virtual Memory</li>
+  <li>File System</li>
+</ul>
+
+<h1 id="code-testing">code testing</h1>
+:ET
