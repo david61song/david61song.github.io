@@ -1,4 +1,4 @@
-I"<h1 id="what-is-pintos-project">What is pintos project?</h1>
+I"Þ<h1 id="what-is-pintos-project">What is pintos project?</h1>
 
 <p>Pintos is an education-purpose Operating System.
 We will perform several tasks and learn the elements of the operating system.
@@ -19,11 +19,13 @@ Pintosâ€™ assignments are divided into four stages.</p>
 4
 5
 6
+7
 </pre></td><td class="code"><pre><span class="cp">#include &lt;stdio.h&gt;
 </span><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
   <span class="n">printf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="mi">33</span><span class="p">);</span>
 
   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">veryveryveryvery</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">,</span> <span class="n">veryveryveryvery</span><span class="p">,</span><span class="n">longlonglong</span><span class="p">)</span> <span class="n">code</span><span class="p">()</span><span class="o">:</span><span class="n">code</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 :ET

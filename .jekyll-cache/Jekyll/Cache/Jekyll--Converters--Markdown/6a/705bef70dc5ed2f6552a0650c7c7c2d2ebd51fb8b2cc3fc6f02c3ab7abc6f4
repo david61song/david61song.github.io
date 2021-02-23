@@ -1,7 +1,6 @@
-I"Ý<h1 id="this-is-my-pgp-key">This is my PGP key</h1>
+I"<h1 id="this-is-my-pgp-key">This is my PGP key</h1>
 
-<pre><code class="language-pgp">-----BEGIN PGP PUBLIC KEY BLOCK-----
-
+<figure class="highlight"><pre><code class="language-text" data-lang="text">-----BEGIN PGP PUBLIC KEY BLOCK-----
 mQINBGAzmTcBEADgGafc6N9dMx7RiFLEoD+QKbozcjKyeUmgKJooZOk6HurTVtV+
 S+O9jzwVX1oafUIuQncKaSfbp/PhAKmZaSFZagHoRNN2OAkh2jjCcFNCb48JmD14
 ySA7mBD1wrlenWk2MGOo1heQ7YhKhJqzHXlNa3ugI+kZ9YLQ6WXM6Dg6HeZ33JTB
@@ -50,8 +49,7 @@ ELZs3HEjpvXBHUR70VJa1/UeIkvAKoosCLe12kv8ZneEsf3x+wySn5qYVlFhZX7M
 m02744U+dHNwtxUdMoXvhENOyVnYUTxyV7dg6NlxYXlrlquhaTj1jJ+NYeUl4/mu
 DHHon7STimmRyYx41TEtHIlunO1ipzzYrUivWdPXBMsaeZe1mKynBi3G5gHP+Wj0
 ailbHvrRWEPVZw===2/XG
------END PGP PUBLIC KEY BLOCK-----
-</code></pre>
+-----END PGP PUBLIC KEY BLOCK-----</code></pre></figure>
 
 <p>Contact: david61song@protonmail.com</p>
 :ET
