@@ -6,7 +6,7 @@
  * Style variables
  */
 $base-font-family:     'Source Code Pro';
-$base-font-size:       12px !default;
+$base-font-size:       13px !default;
 $mobile-font-size:     12px !default;
 $base-line-height:     1.5 !default;
 $container-width:      90% !default;
@@ -73,30 +73,30 @@ textarea { vertical-align: top; }
  * Code and syntax highlighting
  */
 
- pre,
- code {
-   font-family: $code-font-family;
-   border-radius: 0.3em;
- }
- 
- code {
-   padding: 3px 5px;
- }
- 
- pre {
-   padding: 3px 0px;
-   overflow-x: auto;
- 
-   > code {
-     border: 0;
-     padding-right: 0;
-     padding-left: 0;
- 
-     white-space: pre;
-     word-break: normal;
-     word-wrap: break-word;
-   }
- }
+pre,
+code {
+  font-family: $code-font-family;
+  border-radius: 0.3em;
+}
+
+code {
+  padding: 0px 5px;
+}
+
+pre {
+  padding: 8px 12px;
+  overflow-x: auto;
+
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+
+    white-space: pre;
+    word-break: normal;
+    word-wrap: normal;
+  }
+}
 
 
 .highlight .hll { background-color: var(--code-color-2); }
