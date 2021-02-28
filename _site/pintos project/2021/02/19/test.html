@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; img-src 'self'; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self'; object-src 'self'; child-src 'self'; form-action 'none'; base-uri 'self'" />
 <meta http-equiv="X-XSS-Protection"  content="1;mode=block" always>
 <meta http-equiv="Referrer-Policy" content="no-referrer, strict-origin-when-cross-origin"><head>
   <meta charset="utf-8">
@@ -20,7 +19,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Pintos project start" />
 <script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/pintos%20project/2021/02/19/test.html"},"url":"http://0.0.0.0:4000/pintos%20project/2021/02/19/test.html","headline":"Pintos project start","dateModified":"2021-02-19T00:00:00+09:00","datePublished":"2021-02-19T00:00:00+09:00","description":"What is pintos project?","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"http://0.0.0.0:4000/pintos%20project/2021/02/19/test.html","headline":"Pintos project start","dateModified":"2021-02-19T00:00:00+09:00","datePublished":"2021-02-19T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/pintos%20project/2021/02/19/test.html"},"description":"What is pintos project?","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" type="text/css" href="/assets/main-dark.css"></head>
 <body>
@@ -30,7 +29,9 @@
   </div>
 </header>
 <main>
-        
+      
+
+  
     <span class="tag">[#pintos]</span>
   
 
@@ -100,8 +101,6 @@ We need to re-implement it to avoid busy waiting.</p>
     <span class="n">prev</span> <span class="o">=</span> <span class="n">switch_threads</span> <span class="p">(</span><span class="n">cur</span><span class="p">,</span> <span class="n">next</span><span class="p">);</span>
   <span class="n">thread_schedule_tail</span> <span class="p">(</span><span class="n">prev</span><span class="p">);</span>
 <span class="p">}</span>
-
-
 <span class="cm">/* Chooses and returns the next thread to be scheduled.  Should
    return a thread from the run queue, unless the run queue is
    empty.  (If the running thread can continue running, then it
@@ -113,7 +112,7 @@ We need to re-implement it to avoid busy waiting.</p>
   <span class="k">if</span> <span class="p">(</span><span class="n">list_empty</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">ready_list</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">idle_thread</span><span class="p">;</span>
   <span class="k">else</span>
-    <span class="k">return</span> <span class="n">list_entry</span> <span class="p">(</span><span class="n">list_pop_front</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">ready_list</span><span class="p">),</span> <span class="k">struct</span> <span class="kr">thread</span><span class="p">,</span> <span class="n">elem</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">list_entry</span> <span class="p">(</span><span class="n">list_pop_front</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">ready_list</span><span class="p">),</span> <span class="k">struct</span> <span class="kr">thread</span><span class="p">,</span> <span class="n">elem</span><span class="p">);</span> <span class="n">fuck</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -124,7 +123,8 @@ If “Ready Queue” is empty, the function next_thread_to_run() will return idl
 
 <h1 id="who-manages-ticks">Who manages ticks?</h1>
 
-<p>[writing]</p>
+<p>[writing!]</p>
+
 
 
 
@@ -134,3 +134,4 @@ If “Ready Queue” is empty, the function next_thread_to_run() will return idl
 </div>
   </body>
 </html>
+

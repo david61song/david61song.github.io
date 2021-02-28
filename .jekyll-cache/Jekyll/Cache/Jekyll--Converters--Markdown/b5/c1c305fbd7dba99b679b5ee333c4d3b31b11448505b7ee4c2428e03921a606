@@ -1,0 +1,90 @@
+I"U<h1 id="what-is-pintos-project">What is pintos project?</h1>
+
+<p>Pintos is an education-purpose Operating System.
+We will perform several tasks and learn the elements of the operating system.
+Pintos’ assignments are divided into four stages.</p>
+
+<ul>
+  <li>Threads</li>
+  <li>User program</li>
+  <li>Virtual Memory</li>
+  <li>File System</li>
+</ul>
+
+<p>We first write codes about the “Threads” stage.</p>
+
+<h1 id="threads-alarm-clock">Threads: Alarm Clock</h1>
+
+<p>We start our re-writing code by reimplementing timer_sleep() function in /devices/timer.c.</p>
+
+<h2 id="what-is-timer_sleep">What is timer_sleep()?</h2>
+
+<p>timer_sleep function is as shown below,</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* Sleeps for approximately TICKS timer ticks.  Interrupts must
+   be turned on. */</span>
+<span class="kt">void</span>
+<span class="nf">timer_sleep</span> <span class="p">(</span><span class="kt">int64_t</span> <span class="n">ticks</span><span class="p">)</span> 
+<span class="p">{</span>
+  <span class="kt">int64_t</span> <span class="n">start</span> <span class="o">=</span> <span class="n">timer_ticks</span> <span class="p">();</span>
+
+  <span class="n">ASSERT</span> <span class="p">(</span><span class="n">intr_get_level</span> <span class="p">()</span> <span class="o">==</span> <span class="n">INTR_ON</span><span class="p">);</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">timer_elapsed</span> <span class="p">(</span><span class="n">start</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">ticks</span><span class="p">)</span> 
+    <span class="n">thread_yield</span> <span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This function “sleeps” thread, thread will not be running on the CPU until 
+timer_elapsed(start).</p>
+
+<p>Although a working implementation is already provided in skeleton code, it “busy waits”, 
+that is, it spins in a loop checking (by using “while”) the current time
+and calling thread_yield() (yields the CPU to another thread) until enough time has gone by.</p>
+
+<p>CPU will spend its time in a loop checking code, which wastes time resources.
+We need to re-implement it to avoid busy waiting.</p>
+
+<h1 id="pintos-scheduling-algorithm">Pintos’ Scheduling Algorithm</h1>
+
+<p>We first need to find what Scheduling Algorithm that pintos uses.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="kt">void</span>
+<span class="nf">schedule</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> 
+<span class="p">{</span>
+  <span class="k">struct</span> <span class="kr">thread</span> <span class="o">*</span><span class="n">cur</span> <span class="o">=</span> <span class="n">running_thread</span> <span class="p">();</span>
+  <span class="k">struct</span> <span class="kr">thread</span> <span class="o">*</span><span class="n">next</span> <span class="o">=</span> <span class="n">next_thread_to_run</span> <span class="p">();</span>
+  <span class="k">struct</span> <span class="kr">thread</span> <span class="o">*</span><span class="n">prev</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+  <span class="n">ASSERT</span> <span class="p">(</span><span class="n">intr_get_level</span> <span class="p">()</span> <span class="o">==</span> <span class="n">INTR_OFF</span><span class="p">);</span>
+  <span class="n">ASSERT</span> <span class="p">(</span><span class="n">cur</span><span class="o">-&gt;</span><span class="n">status</span> <span class="o">!=</span> <span class="n">THREAD_RUNNING</span><span class="p">);</span>
+  <span class="n">ASSERT</span> <span class="p">(</span><span class="n">is_thread</span> <span class="p">(</span><span class="n">next</span><span class="p">));</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">cur</span> <span class="o">!=</span> <span class="n">next</span><span class="p">)</span>
+    <span class="n">prev</span> <span class="o">=</span> <span class="n">switch_threads</span> <span class="p">(</span><span class="n">cur</span><span class="p">,</span> <span class="n">next</span><span class="p">);</span>
+  <span class="n">thread_schedule_tail</span> <span class="p">(</span><span class="n">prev</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cm">/* Chooses and returns the next thread to be scheduled.  Should
+   return a thread from the run queue, unless the run queue is
+   empty.  (If the running thread can continue running, then it
+   will be in the run queue.)  If the run queue is empty, return
+   idle_thread. */</span>
+<span class="k">static</span> <span class="k">struct</span> <span class="kr">thread</span> <span class="o">*</span>
+<span class="nf">next_thread_to_run</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> 
+<span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">list_empty</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">ready_list</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">idle_thread</span><span class="p">;</span>
+  <span class="k">else</span>
+    <span class="k">return</span> <span class="n">list_entry</span> <span class="p">(</span><span class="n">list_pop_front</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">ready_list</span><span class="p">),</span> <span class="k">struct</span> <span class="kr">thread</span><span class="p">,</span> <span class="n">elem</span><span class="p">);</span> <span class="n">fuck</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Pintos chooses first element thread in “Ready Queue”.
+If “Ready Queue” is empty, the function next_thread_to_run() will return idle_thread.</p>
+
+<p>However, the function which is provided in skeleton code, thread_sleep() function never modifies ready queue. so there are no cases that CPU runs “idle thread”.</p>
+
+<h1 id="who-manages-ticks">Who manages ticks?</h1>
+
+<p>[writing!]</p>
+
+:ET
