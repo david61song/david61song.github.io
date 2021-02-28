@@ -1,39 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; img-src 'self'; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self'; object-src 'self'; child-src 'self'; form-action 'none'; base-uri 'self'" />
-<meta http-equiv="X-XSS-Protection"  content="1;mode=block" always>
-<meta http-equiv="Referrer-Policy" content="no-referrer, strict-origin-when-cross-origin"><head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Pintos project start</title><!-- Begin Jekyll SEO tag v2.7.1 -->
-<meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Pintos project start" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="What is pintos project?" />
-<meta property="og:description" content="What is pintos project?" />
-<meta property="og:site_name" content="David Song’s blog" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-02-19T00:00:00+09:00" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Pintos project start" />
-<script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"/pintos%20project/2021/02/19/test.html"},"url":"/pintos%20project/2021/02/19/test.html","description":"What is pintos project?","dateModified":"2021-02-19T00:00:00+09:00","datePublished":"2021-02-19T00:00:00+09:00","headline":"Pintos project start","@type":"BlogPosting","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-<link rel="stylesheet" type="text/css" href="/assets/main-dark.css"></head>
-<body>
-    <div class="container"><header>
-  <div class="menu">
-    <ul><li><a href="/">Index</a></li><li><a href="/pgp">PGP key</a></li><li><a href="/about">About me</a></li><li><a href="/category/">Category</a></li></ul>
-  </div>
-</header>
-<main>
-        
-    <span class="tag">[#pintos]</span>
-  
-
-
-<h1 id="what-is-pintos-project">What is pintos project?</h1>
+I"}<h1 id="what-is-pintos-project">What is pintos project?</h1>
 
 <p>Pintos is an education-purpose Operating System.
 We will perform several tasks and learn the elements of the operating system.
@@ -163,13 +128,4 @@ If “Ready Queue” is empty, the function next_thread_to_run() will return idl
 
 <h1 id="who-manages-ticks">Who manages ticks?</h1>
 
-<p>[writing]</p>
-
-
-
-    </main><footer>
-  Published by david song
-</footer>
-</div>
-  </body>
-</html>
+:ET
