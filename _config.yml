@@ -27,7 +27,9 @@ header_pages:
 style: dark # dark (default), light or hacker
 footer: 'Published by david song'
 
-markdown: kramdown
-highlighter: rouge
+markdown: redcarpet
+redcarpet:
+    extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "with_toc_data"]
+
 
 
