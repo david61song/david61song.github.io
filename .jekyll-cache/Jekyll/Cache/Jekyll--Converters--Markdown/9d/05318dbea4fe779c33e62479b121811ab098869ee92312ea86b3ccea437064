@@ -1,4 +1,4 @@
-I"U<h1 id="what-is-pintos-project">What is pintos project?</h1>
+I"�<h1 id="what-is-pintos-project">What is pintos project?</h1>
 
 <p>Pintos is an education-purpose Operating System.
 We will perform several tasks and learn the elements of the operating system.
@@ -21,7 +21,18 @@ Pintos’ assignments are divided into four stages.</p>
 
 <p>timer_sleep function is as shown below,</p>
 
-<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* Sleeps for approximately TICKS timer ticks.  Interrupts must
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="cm">/* Sleeps for approximately TICKS timer ticks.  Interrupts must
    be turned on. */</span>
 <span class="kt">void</span>
 <span class="nf">timer_sleep</span> <span class="p">(</span><span class="kt">int64_t</span> <span class="n">ticks</span><span class="p">)</span> 
@@ -32,7 +43,7 @@ Pintos’ assignments are divided into four stages.</p>
   <span class="k">while</span> <span class="p">(</span><span class="n">timer_elapsed</span> <span class="p">(</span><span class="n">start</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">ticks</span><span class="p">)</span> 
     <span class="n">thread_yield</span> <span class="p">();</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>This function “sleeps” thread, thread will not be running on the CPU until 
 timer_elapsed(start).</p>
@@ -48,7 +59,35 @@ We need to re-implement it to avoid busy waiting.</p>
 
 <p>We first need to find what Scheduling Algorithm that pintos uses.</p>
 
-<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="kt">void</span>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+</pre></td><td class="rouge-code"><pre><span class="k">static</span> <span class="kt">void</span>
 <span class="nf">schedule</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> 
 <span class="p">{</span>
   <span class="k">struct</span> <span class="kr">thread</span> <span class="o">*</span><span class="n">cur</span> <span class="o">=</span> <span class="n">running_thread</span> <span class="p">();</span>
@@ -76,7 +115,7 @@ We need to re-implement it to avoid busy waiting.</p>
   <span class="k">else</span>
     <span class="k">return</span> <span class="n">list_entry</span> <span class="p">(</span><span class="n">list_pop_front</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">ready_list</span><span class="p">),</span> <span class="k">struct</span> <span class="kr">thread</span><span class="p">,</span> <span class="n">elem</span><span class="p">);</span> <span class="n">fuck</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>Pintos chooses first element thread in “Ready Queue”.
 If “Ready Queue” is empty, the function next_thread_to_run() will return idle_thread.</p>

@@ -5,7 +5,7 @@
 
 /** Style variables */
 /** Global */
-body { background-color: var(--background-color); margin: 0 auto; padding: 0; font-family: "Source Code Pro"; font-size: 14px; color: var(--text-color); text-align: left; line-height: 1.5 !important; }
+body { background-color: var(--background-color); color: var(--text-color); line-height: 1.5 !important; text-align: left; margin: 0; padding: 0; font-family: "Source Code Pro"; -webkit-text-size-adjust: 110%; -webkit-font-feature-settings: "kern" 1; -moz-font-feature-settings: "kern" 1; -o-font-feature-settings: "kern" 1; font-feature-settings: "kern" 1; font-kerning: normal; min-height: 100vh; flex-direction: column; }
 
 h1, h2, h3, h4, h5, h6 { font-size: 16px; margin: 5px; margin-top: 35px; font-weight: bold; color: var(--text-color); }
 
@@ -15,12 +15,12 @@ a { text-decoration: underline; color: var(--link-color); }
 
 a:hover { color: var(--background-color); background-color: var(--base-color); }
 
-@media only screen and (max-device-width: 700px) { * { font-size: 12px; } }
+@media only screen and (max-device-width: 700px) { * { font-size: 10px; } }
 
 /** Layout */
 .container { width: 90%; max-width: 700px; margin-right: auto; margin-left: auto; }
 
-p { word-wrap: break-word; word-break: break-word; white-space: pre-wrap; margin-bottom: 15px; }
+p { word-wrap: normal; word-break: break-word; white-space: pre-wrap; margin-bottom: 15px; }
 
 footer { color: var(--text-color); border-top: var(--border); margin: 20px auto 15px; padding-top: 10px; text-align: right; }
 
@@ -53,37 +53,17 @@ footer { margin-bottom: 20px; }
 
 .menu ul li a:hover { text-decoration: none; color: var(--background-color); background-color: var(--base-color); }
 
-/** Form */
-input, select, textarea { padding: 0; margin: 0; -webkit-appearance: none; -webkit-border-radius: 0; border: none; }
-
-input[type=text], select, textarea { width: 100%; resize: none; background-color: var(--background-color); color: var(--text-color); caret-color: var(--text-color); font-size: 14px; font-family: "Source Code Pro"; line-height: 1.5; }
-
-input, select, textarea, textarea::-webkit-input-placeholder { text-indent: 0px; }
-
-::placeholder { color: var(--placeholder-color); opacity: 1; }
-
-:-ms-input-placeholder { color: var(--placeholder-color); }
-
-::-ms-input-placeholder { color: var(--placeholder-color); }
-
-input[type=submit] { font-size: 14px; font-family: "Source Code Pro"; line-height: 1.5; cursor: pointer; color: var(--link-color); background-color: var(--background-color); }
-
-input[type=submit]:hover { color: var(--background-color); background-color: var(--base-color); }
-
-*:focus { outline: none; }
-
-textarea { vertical-align: top; }
-
 /** Code and syntax highlighting */
-figure.highlight { margin: 10px 0; }
+/** Code formatting */
+pre, code { font-family: "Inconsolata"; border-radius: 0.3em; }
 
-.lineno { color: var(--code-color-1); margin-right: 15px; }
+code { padding: 0px 5px; }
 
-pre, code { display: block; border: 1px solid #b3b3b3; padding: 5; margin: 3; overflow: scroll; font-size: 14px; color: var(--text-color); line-height: 1.6; font-family: "Source Code Pro"; }
+pre { padding: 4px 3px; }
 
-.highlight table td { padding: 5px; }
+pre > code { border: 0; padding-right: 0; padding-left: 0; white-space: nowrap; word-break: normal; word-wrap: normal; }
 
-.highlight table pre { margin: 0; }
+pre.highlight { word-wrap: normal; overflow-x: auto; white-space: pre; }
 
 .highlight, .highlight .w { color: #fbf1c7; background-color: #282828; }
 

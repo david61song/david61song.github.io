@@ -7,18 +7,52 @@
  */
 $base-font-family:     'Source Code Pro';
 $base-font-size:       14px !default;
-$mobile-font-size:     12px !default;
+$mobile-font-size:     10px !default;
 $base-line-height:     1.5 !default;
 $container-width:      90% !default;
 $container-max-width:  700px !default;
 $code-font-family:  'Inconsolata' !default;
+// Layouts
+$spacing-unit:      2rem !default;
+$content-width:     1100px !default;
+
+$on-small:          600px !default;
+$on-medium:         900px !default;
+$on-large:          1100px !default;
+%vertical-rhythm {
+  margin-bottom: $spacing-unit;
+}
 
 /**
  * Global
  */
-body { background-color: var(--background-color);  margin: 0 auto;  padding: 0;  font-family: $base-font-family;  font-size: $base-font-size;  color: var(--text-color);  text-align: left;  line-height: $base-line-height !important; }
-h1, h2, h3, h4, h5, h6 { font-size: 16px;  margin: 5px;  margin-top: 35px;  font-weight: bold;  color: var(--text-color); }
-p, ul, ol { margin: 0px;  color: var(--text-color); }
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: $base-line-height !important;
+  text-align: left; 
+  margin: 0;  padding: 0;
+  font-family: $base-font-family;
+  -webkit-text-size-adjust: 110%;
+  -webkit-font-feature-settings: "kern" 1;
+     -moz-font-feature-settings: "kern" 1;
+       -o-font-feature-settings: "kern" 1;
+          font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  min-height: 100vh;
+  flex-direction: column;
+}
+h1, h2, h3, h4, h5, h6
+{ font-size: 16px;  
+  margin: 5px;  
+  margin-top: 35px;  
+  font-weight: bold;  
+  color: var(--text-color); 
+}
+
+p, ul, ol{
+   margin: 0px;
+   color: var(--text-color); }
 a { text-decoration: underline;  color: var(--link-color); }
 a:hover { color: var(--background-color); background-color: var(--base-color); }
 @media only screen and (max-device-width: 700px) { * { font-size: $mobile-font-size; } }
@@ -27,7 +61,7 @@ a:hover { color: var(--background-color); background-color: var(--base-color); }
  * Layout
  */
 .container { width: $container-width;  max-width: $container-max-width;  margin-right: auto;  margin-left: auto; }
-p { word-wrap: break-word;  word-break: break-word;  white-space: pre-wrap; margin-bottom: 15px; }
+p { word-wrap: normal;  word-break: break-word;  white-space: pre-wrap; margin-bottom: 15px; }
 footer { color: var(--text-color);  border-top: var(--border);  margin: 20px auto 15px;  padding-top: 10px;  text-align: right; }
 header { margin-top: 25px;  margin-bottom: 10px; }
 header p { text-align: left;  margin: 0; }
@@ -55,44 +89,45 @@ footer { margin-bottom: 20px; }
 .menu ul li a { text-decoration: none;  color: var(--text-color); }
 .menu ul li a:hover { text-decoration: none; color: var(--background-color); background-color: var(--base-color); }
 
-/**
- * Form
- */
-input, select, textarea { padding: 0;  margin: 0;  -webkit-appearance: none;  -webkit-border-radius: 0;  border: none; }
-input[type=text], select, textarea { width: 100%;  resize: none;  background-color: var(--background-color);  color: var(--text-color);  caret-color: var(--text-color);  font-size: $base-font-size;  font-family: $base-font-family;  line-height: $base-line-height; }
-input, select, textarea, textarea::-webkit-input-placeholder { text-indent: 0px; }
-::placeholder { color: var(--placeholder-color);  opacity: 1; }
-:-ms-input-placeholder { color: var(--placeholder-color); }
-::-ms-input-placeholder { color: var(--placeholder-color); }
-input[type=submit] { font-size: $base-font-size;  font-family: $base-font-family;  line-height: $base-line-height;  cursor: pointer;  color: var(--link-color);  background-color: var(--background-color); }
-input[type=submit]:hover { color: var(--background-color); background-color: var(--base-color); }
-*:focus { outline: none; }
-textarea { vertical-align: top; }
 
 /**
  * Code and syntax highlighting
  */
 
-
-
-figure.highlight { margin: 10px 0; }
-.lineno { color: var(--code-color-1); margin-right: 15px; }
-pre,code
-{
-  display: block;
-  border: 1px solid rgb(179, 179, 179); 
-  padding: 5;  
-  margin: 3;  
-  overflow: scroll;  
-  font-size: $base-font-size; 
-  color: var(--text-color);
-  line-height: 1.6;
-  font-family: $base-font-family;
+/**
+ * Code formatting
+ */
+ pre,
+ code {
+   font-family: $code-font-family;
+   border-radius: 0.3em;
+ }
+ 
+ code {
+   padding: 0px 5px;
+ }
+ 
+ pre {
+   padding: 4px 3px;
+   
+ 
+   > code {
+     border: 0;
+     padding-right: 0;
+     padding-left: 0;
+ 
+     white-space: nowrap;
+     word-break: normal;
+     word-wrap: normal;
+   }
+ }
+ 
+ pre.highlight {
+  word-wrap: normal;
+  overflow-x: auto;
+  white-space: pre;
 }
 
-
-.highlight table td { padding: 5px; }
-.highlight table pre { margin: 0; }
 .highlight, .highlight .w {
   color: #fbf1c7;
   background-color: #282828;
@@ -178,3 +213,4 @@ pre,code
 .highlight .ss {
   color: #83a598;
 }
+

@@ -42,3 +42,11 @@ kramdown:
   math_engine_opts:
     preview:         true
     preview_as_code: true
+
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
