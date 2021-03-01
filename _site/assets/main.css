@@ -58,9 +58,9 @@ code { padding: 0px 5px; }
 
 pre { padding: 4px 3px; }
 
-pre > code { border: 0; padding-right: 0; padding-left: 0; white-space: nowrap; word-break: normal; word-wrap: normal; }
+pre > code { border: 0; padding-right: 0; padding-left: 0; word-break: break-all; word-wrap: normal; }
 
-pre.highlight { word-wrap: normal; overflow-x: auto; white-space: pre; }
+pre.highlight { overflow-x: auto; }
 
 .highlight, .highlight .w { color: #fbf1c7; background-color: #282828; }
 

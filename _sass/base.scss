@@ -116,16 +116,13 @@ footer { margin-bottom: 20px; }
      padding-right: 0;
      padding-left: 0;
  
-     white-space: nowrap;
-     word-break: normal;
+     word-break: break-all;
      word-wrap: normal;
    }
  }
  
  pre.highlight {
-  word-wrap: normal;
   overflow-x: auto;
-  white-space: pre;
 }
 
 .highlight, .highlight .w {

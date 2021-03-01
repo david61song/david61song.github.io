@@ -1,14 +1,6 @@
----
-title: PGP key
-layout: home
-permalink: /pgp
----
+I"ð<h1 id="this-is-my-pgp-key">This is my PGP key</h1>
 
-# This is my PGP key
-
-
-```pgp
-
+<pre><code class="language-pgp">
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mDMEXx0YHBYJKwYBBAHaRw8BAQdAJ55bjFTLfmFJk3hkfUWnaKEPqa8t9dxLIrtc
@@ -22,7 +14,7 @@ CAeIYQQYFggACQUCXx0YHAIbDAAKCRDDub4tsDtCAGGeAPwPVF8Uth4XbPqxLWFM
 6UvTXwU=
 =2sMA
 -----END PGP PUBLIC KEY BLOCK-----
-```
+</code></pre>
 
-
-Contact: david61song@protonmail.com
+<p>Contact: david61song@protonmail.com</p>
+:ET
